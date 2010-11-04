@@ -1,0 +1,27 @@
+services:
+  eventContext:
+    class: Mvc_EventContext
+    shared: false
+  request:
+    class: Mvc_Controller_Request
+    shared: false
+  response:
+    class: Mvc_Response
+    shared: false
+  router:
+    class: Mvc_Router
+  dispatcher:
+    class: Mvc_Controller_Dispatcher
+    arguments: [%path%/app/controllers]
+  view:
+    class: Mvc_View
+    arguments: [%path%/templates]
+  config:
+    class: Mvc_Config
+    arguments: [%path%/config/config.yml]
+  renderer:
+    class: Mvc_View_Renderer
+  helperBrocker:
+    class: Mvc_Helper_Brocker
+  eventDispatcher:
+    class: sfEventDispatcher

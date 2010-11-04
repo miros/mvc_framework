@@ -1,0 +1,21 @@
+<table cellpadding="3" cellspacing="1" border="0" bgcolor="#C0C0C0" width="60%">
+	<tr>
+		<td class="small" bgcolor="#F2F3DE" valign="top">
+			Автор: <a href="user.php?uname={{comment.author.login}}">{{comment.author.name}}</a> | Дата: {{comment.date}}
+
+			{% if comment.canDelete(CURRENT_USER) %}
+				[<a href="/news_comments.php?action=delete&id={{comment.id}}">удалить</a>]
+			{% endif %}
+
+			{% if comment.canEdit(CURRENT_USER) %}
+				[<a href="/news_comments.php?action=edit&id={{comment.id}}">редактировать</a>]
+			{% endif %}
+
+		</td>
+	</tr>
+	<tr>
+		<td valign="top" bgcolor="#FFFFFF">
+			{{comment.text}}
+		</td>
+	</tr>
+</table>

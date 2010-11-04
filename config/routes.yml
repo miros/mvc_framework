@@ -1,0 +1,7 @@
+showPoem:
+  path: /my_new_path/<id>
+  params: { id: \d+ }
+  defaults: { controller: test, action: test }
+default:
+  path: /<controller>/<action>
+  defaults: { controller: index, action: index }

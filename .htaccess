@@ -1,0 +1,8 @@
+RewriteEngine on  
+
+RewriteRule ^test/$ /app/dispatcher.php?controller=test&action=test [L]
+
+RewriteCond %{REQUEST_URI} !^/public/
+RewriteCond %{REQUEST_URI} !^/app/dispatcher.php
+RewriteRule ^(.*)$ /public/$1 [env=APP_ENV:production]
+

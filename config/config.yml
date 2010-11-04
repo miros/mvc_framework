@@ -1,0 +1,9 @@
+db:
+  dbh: mysql://login:pass@localhost/test
+errors:
+  default:
+    controller: Error
+		action: Error
+  404:
+		controller: Error
+		action: Error
